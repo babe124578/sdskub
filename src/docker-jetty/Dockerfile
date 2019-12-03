@@ -25,5 +25,7 @@ RUN useradd jetty && \
     rm -rf /opt/jetty/webapps.demo
 
 # Set defaults for docker run
+COPY /ui /opt/jetty
 WORKDIR /opt/jetty
+
 CMD ["java", "-jar", "start.jar", "jetty.home=/opt/jetty"]
